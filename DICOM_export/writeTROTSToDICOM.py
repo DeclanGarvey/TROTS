@@ -17,7 +17,7 @@ import pandas as pd
 parser = argparse.ArgumentParser()
 parser.add_argument("--Manufacturer", nargs='?', help="The name of the manufacturer to be saved in the DICOMs", default="")
 parser.add_argument("--ManufacturerModelName", nargs='?', help="The name of the manufacturer model to be saved in the DICOMs", default="")
-parser.add_argument("--InstitutionName", nargs='?', help="The name of the Institution to be saved in the DICOMs", default="")
+parser.add_argument("--InstitutionName", nargs='?', help="The name of the Institution to be saved in the DICOMs", default="TROTs")
 parser.add_argument("--ReferringPhysicianName", nargs='?', help="The name of the referring physician to be saved in the DICOMs", default="")
 parser.add_argument("--OperatorsName", nargs='?', help="The name of the operator to be saved in the DICOMs", default="")
 parser.add_argument("--TreatmentMachineName", nargs='?', help="The name of the treatment machine name to be saved in the DICOMs", default="TROTS")
@@ -411,7 +411,7 @@ for folder in caseFolders:
             rtds.AccessionNumber = rds.AccessionNumber
             rtds.Modality = "RTPLAN"
             rtds.Manufacturer = args.Manufacturer
-            # rtds.InstitutionName = args.InstitutionName # Optional
+            rtds.InstitutionName = args.InstitutionName 
             rtds.SpecificCharacterSet='ISO_IR 100' # Optional
             rtds.InstanceCreationDate='20250708' # Optional
             rtds.InstanceCreationTime='112329.000000' # Optional
